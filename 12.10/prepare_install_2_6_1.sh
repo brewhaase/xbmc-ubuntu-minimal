@@ -289,12 +289,15 @@ function addUserToRequiredGroups()
 	sudo adduser $XBMC_USER cdrom > /dev/null 2>&1
 	sudo adduser $XBMC_USER plugdev > /dev/null 2>&1
         sudo adduser $XBMC_USER dialout > /dev/null 2>&1
+	sudo adduser $XBMC_USER sudo > /dev/null 2>&1
+	sudo adduser $XBMC_USER polkituser > /dev/null 2>&1
+	sudo adduser $XBMC_USER netdev > /dev/null 2>&1
 	showInfo "XBMC user added to required groups"
 }
 
 function addXbmcPpa()
 {
-    showInfo "Adding Wsnipex xbmc-xvba PPA..."
+    showInfo "Adding team-xbmc-ppa..."
 	IS_ADDED=$(addRepository "$XBMC_PPA")
 }
 
